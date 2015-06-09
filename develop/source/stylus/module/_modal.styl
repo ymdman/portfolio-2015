@@ -1,0 +1,253 @@
+//*********************************************
+//
+// Modal
+//
+//*********************************************
+//=============================================
+// Container
+//=============================================
+// ----- Normal -------------------------------
+.modal-container
+  content-width()
+  position absolute
+  top 0
+  left 0
+  z-index 1000
+  background #fff
+  box-sizing border-box
+  opacity 0
+  transition opacity duration-fast
+  padding-top 70px
+  padding-bottom 70px
+
+@media mq-tb
+  .modal-container
+    content-width-tb()
+    padding-top 50px
+    padding-bottom 50px
+
+@media mq-sp
+  .modal-container
+    content-width-sp()
+    padding-top 40px
+    padding-bottom 40px
+
+// ----- Visible -------------------------------
+.modal-container.is-visible
+  opacity 1
+
+//=============================================
+// Prev Button
+//=============================================
+.modal__prev-btn
+  position absolute
+  top 23px
+  right 10%
+
+  > a
+    text-decoration none
+    color fc-base
+    font-size fs-large
+    font-family ff-oxygen
+    font-weight bold
+    position relative
+
+    &:hover
+      color color-theme-light
+
+    &::before
+      content ""
+      display block
+      border-top 5px solid transparent
+      border-right 5px solid #333
+      border-bottom 5px solid transparent
+      border-left 5px solid transparent
+      position absolute
+      top 50%
+      left 0
+      margin-top -5px
+      margin-left -17px
+
+    &:hover::before
+      border-right-color color-theme-light
+
+@media mq-tb
+  .modal__prev-btn
+    right  7%
+
+@media mq-sp
+  .modal__prev-btn
+    top 15px
+    right 4%
+
+//=============================================
+// Contents
+//=============================================
+.modal-contents
+  display flex
+  flex-direction row
+  flex-wrap nowrap
+
+@media mq-tb
+  .modal-contents
+    flex-direction column
+
+//=============================================
+// Detail
+//=============================================
+.modal-detail
+  flex 0 0 30%
+  margin-right 5%
+
+.modal-detail__title
+  heading()
+
+.modal-detail__list
+  margin-top 30px
+
+  > dt
+    font-weight bold
+
+    &:not(:first-child)
+      margin-top 20px
+
+.modal-detail__text
+  margin-top 30px
+
+.modal-detail__img-list
+  margin-top 30px
+  list-style none
+  font-size 0
+
+  > li
+    border solid 1px bc-delimit
+    display inline-block
+    width 50px
+    height 50px
+    overflow hidden
+    cursor pointer
+
+    &:not(:first-child)
+      margin-left 5px
+
+    &:hover
+      border solid 1px color-theme-light
+
+    img
+      width 100%
+
+.modal-detail__img-list--oblong
+  @extend .modal-detail__img-list
+
+  > li
+    height auto
+    overflow auto
+
+@media mq-tb
+  .modal-detail
+    flex none
+    margin-right 0
+
+@media mq-sp
+  .modal-detail__title
+    heading(heading-small)
+
+  .modal-detail__list
+    margin-top 20px
+
+    > dt:not(:first-child)
+      margin-top 15px
+
+  .modal-detail__text
+    margin-top 20px
+
+  .modal-detail__img-list
+    margin-top 30px
+
+// ----- Button ---------------------------------
+.modal-detail__btn
+  font-family ff-oxygen
+  background-color color-theme-light
+  display inline-block
+  margin-top 30px
+  transition background-color duration-fast
+
+  > a
+    color #fff
+    padding 5px 10px
+    display block
+    text-decoration none
+
+  &:hover
+    background-color lightness(color-theme-light, 65%)
+
+@media mq-sp
+  .modal-detail__btn
+    margin-top 30px
+
+//=============================================
+// Img
+//=============================================
+.modal-img
+  flex 0 0 65%
+
+  img
+    max-width 100%
+
+.modal-img__mask
+  overflow hidden
+  text-align center
+  border solid 1px bc-delimit
+  position relative
+  list-style none
+
+  > li
+    position absolute
+    top 0
+    right 0
+    left 0
+    background #f9f9f9
+    opacity 0
+    transition opacity duration-fast
+
+    &.is-visible
+      opacity 1
+
+.modal-img__mask--oblong
+  overflow visible
+  border none
+  @extend .modal-img__mask
+
+  > li
+    border solid 1px bc-delimit
+
+@media mq-tb
+  .modal-img
+    flex none
+    margin-top 30px
+
+  .modal-img__mask--oblong
+    > li
+      position static
+
+//=============================================
+// Loading
+//=============================================
+.loading
+  position absolute
+  left 0
+  right 0
+  background #fff
+  width 130px
+  height 40px
+  margin-top -@height
+  margin-right auto
+  margin-left auto
+  border solid 3px color-theme-light
+
+.loading__text
+  text-align center
+  font-family ff-yanone-kaffeesatz
+  font-size fs-x-large
+  font-weight bold
+  line-height 40px

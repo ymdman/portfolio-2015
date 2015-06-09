@@ -1,0 +1,65 @@
+//*********************************************
+//
+// Layout
+//
+//*********************************************
+//=============================================
+// Container
+//=============================================
+// ----- Normal -------------------------------
+.container
+  overflow hidden
+  position relative
+  opacity 0
+  transition opacity duration-fast
+
+// ----- Visible ------------------------------
+.container.is-visible
+  opacity 1
+
+//=============================================
+// Contents
+//=============================================
+// ----- Normal -------------------------------
+.contents
+  transition transform duration-normal
+
+// ----- open ---------------------------------
+.contents.is-open
+  transform translateX(nav-width-pc)
+
+@media mq-tb
+  .contents.is-open
+    transform translateX(nav-width-tb)
+
+@media mq-sp
+  .contents.is-open
+    transform translateX(nav-width-sp)
+
+//=============================================
+// Main
+//=============================================
+.main
+  content-width()
+  margin-top 100px
+
+.main-content__title
+  heading(heading-large)
+
+.main-content__text
+  margin-top 20px
+
+@media mq-tb
+  .main
+    content-width-tb()
+
+@media mq-sp
+  .main
+    content-width-sp()
+    margin-top 60px
+
+  .main-content__title
+    heading()
+
+
+

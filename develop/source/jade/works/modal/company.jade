@@ -1,0 +1,31 @@
+- var imgPC = '<img src="/works/images/company-pc.jpg" alt="PCサイトのスクリーンショット">'
+- var imgSP = '<img src="/works/images/company-sp.jpg" alt="スマートフォンサイトのスクリーンショット">'
+
+section.modal-container#jsi-modal-target
+  p.modal__prev-btn
+    a(href='#')#jsi-modal-prev-btn Back
+  div.modal-contents
+    div.modal-detail
+      h1.modal-detail__title Site Name
+      dl.modal-detail__list
+        dt Title / テキスト
+        dd Detail / テキストテキスト
+        dt Title / テキスト
+        dd Detail / テキストテキスト
+        dt Title / テキスト
+        dd Detail / テキストテキスト
+        dt Title / テキスト
+        dd Detail / テキストテキスト
+        dt Title / テキスト
+        dd Detail / テキストテキスト
+      p.modal-detail__text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。
+      p.modal-detail__btn
+        a(href='#' target='_blank') Visit This Site
+      ul.modal-detail__img-list#jsi-modal-change-img-trigger
+        li!= imgPC
+        li!= imgSP
+    div.modal-img
+      ul.modal-img__mask#jsi-modal-change-img-target
+        li.is-visible!= imgPC
+        li!= imgSP
+

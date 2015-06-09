@@ -1,0 +1,16 @@
+mixin logo()
+  h1.g-header-logo-title
+    span.g-header-logo-title__primary 19790620
+    span.g-header-logo-title__secondary .com
+  p.g-header-logo-description
+    span.g-header-logo-description__secondary Front-End Engineer
+    span.g-header-logo-description__primary KAZUHIRO YAMADA
+
+if (headerTop)
+  header.g-header--top#jsi-loading-header
+    div.g-header-logo#jsi-loading-logo
+      +logo()
+else
+  header.g-header
+    div.g-header-logo
+      +logo()

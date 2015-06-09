@@ -1,0 +1,46 @@
+- var headerTop = true
+
+include /module/_header
+
+main.main
+  section.main-visual#jsi-loading-bg
+    h1.main-visual-title#jsi-loading-title
+      span.g-header-title__secondary Front-End Engineer
+      br
+      span.g-header-title__primary KAZUHIRO YAMADA
+
+  section.main-content
+    h1.main-content__title About
+    p.main-content__text フロントエンド・エンジニア山田和弘のポートフォリオサイトになります。
+      br
+      | テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。テキスト
+      a(href='#' target='_blank') GitHub
+      | テキストテキストテキストテキストテキストテキスト。
+    p.main-content__text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。
+
+    section.content-point
+      h1.content-point__title Point
+      ul.content-point__list
+        li ターゲットブラウザはChrome・Safari・Firefox・Internet Explorerの最新版。スマートフォンとタブレットはiOS8のSafariのみの確認
+        li タスクランナーはGulpを使用
+        li Jade・Stylus・CoffeeScriptで構築
+        li 高速化を考えたコーディング
+        li CSS3のFlexboxを使用したレイアウト
+        li Browserify + CoffeeScriptでモダンな開発を実践
+    section.content-profile
+      h1.content-profile__title Profile
+      div.content-profile__detail
+        div.content-profile-photo
+          img(src='/images/img-profile.jpg', alt='山田和弘が椅子に座っているプロフィール写真')
+        div.content-profile-description
+          p.content-profile-description__name Kazuhiro Yamada / 山田 和弘
+          p.content-profile-description__job Front-End Engineer / Web-Designer
+          ul.content-profile-description__service
+            li
+              a.content-profile-description__icon--github(href='https://github.com/ymdman', target='_blank') GitHub
+            li
+              a.content-profile-description__icon--qiita(href='http://qiita.com/ymdman', target='_blank') Qiita
+
+          p.content-profile-description__text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。
+            br
+            | テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。

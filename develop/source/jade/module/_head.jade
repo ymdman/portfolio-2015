@@ -1,0 +1,25 @@
+head
+  meta(charset='utf-8')
+
+  if (about)
+    title 19790620.com
+  else if (works)
+    title Works | 19790620.com
+  else if (skill)
+    title Skill | 19790620.com
+
+  meta(name='description', content='Front-End Engineer Kazuhiro Yamadaのポートフォリオサイトです。')
+  meta(name='keywords', content='')
+  meta(name='robots', content='noindex, nofollow')
+  meta(name='author', content='Kazuhiro Yamada')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+
+  if (about)
+    link(rel='stylesheet', href='/css/about.css')
+  else if (works)
+    link(rel='stylesheet', href='/css/works.css')
+  else if (skill)
+    link(rel='stylesheet', href='/css/skill.css')
+
+  <link href="/favicon.ico" rel="icon" type="image/x-icon">
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">

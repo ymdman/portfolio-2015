@@ -1,0 +1,201 @@
+//*********************************************
+//
+// Skill
+//
+//*********************************************
+.content-skill
+  margin-top 100px
+
+.content-skill__title
+  heading()
+
+@media mq-sp
+  .content-skill
+    margin-top 60px
+
+  .content-skill__title
+    heading(heading-small)
+
+//=============================================
+// Programming
+//=============================================
+.skill-list
+  list-style none
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  margin-top 10px
+  margin-left -2%
+
+  > li
+    flex 0 0 31.33%
+    margin-top 20px
+    margin-left 2%
+
+@media mq-tb
+  .skill-list
+    > li
+      flex 0 0 48%
+
+@media mq-sp
+  .skill-list
+    margin-top 8px
+
+    > li
+      margin-top 12px
+
+
+.skill-list__title
+  font-size fs-base
+  font-weight normal
+
+// ----- normal -------------------------------
+.skill-list__graph--js
+.skill-list__graph--coffee
+.skill-list__graph--node
+.skill-list__graph--html5
+.skill-list__graph--css3
+.skill-list__graph--jade
+.skill-list__graph--stylus
+.skill-list__graph--sass
+.skill-list__graph--swift
+.skill-list__graph--design
+  width 100%
+  height 15px
+  background #f1f1f1
+  position relative
+
+  &::before
+    content ""
+    display block
+    height 15px
+    background #2ecc71
+    position relative
+    top 0
+    left 0
+    width 0
+    transition width duration-slow ease-in-out
+
+// ----- Active -------------------------------
+.skill-list__graph--js.is-active
+  &::before
+    width 85%
+    transition-delay 200ms
+
+.skill-list__graph--coffee.is-active
+  &::before
+    width 50%
+    transition-delay 400ms
+
+.skill-list__graph--node.is-active
+  &::before
+    width 30%
+    transition-delay 600ms
+
+.skill-list__graph--html5.is-active
+  &::before
+    width 85%
+    transition-delay 800ms
+
+.skill-list__graph--css3.is-active
+  &::before
+    width 85%
+    transition-delay 1000ms
+
+.skill-list__graph--jade.is-active
+  &::before
+    width 40%
+    transition-delay 1200ms
+
+.skill-list__graph--stylus.is-active
+  &::before
+    width 50%
+    transition-delay 1400ms
+
+.skill-list__graph--sass.is-active
+  &::before
+    width 60%
+    transition-delay 1600ms
+
+.skill-list__graph--swift.is-active
+  &::before
+    width 10%
+    transition-delay 1800ms
+
+.skill-list__graph--design.is-active
+  &::before
+    width 50%
+    transition-delay 2000ms
+
+.content-skill__text
+  margin-top 30px
+
+@media mq-sp
+  .skill-list__graph--js
+  .skill-list__graph--coffee
+  .skill-list__graph--node
+  .skill-list__graph--html5
+  .skill-list__graph--css3
+  .skill-list__graph--jade
+  .skill-list__graph--stylus
+  .skill-list__graph--sass
+  .skill-list__graph--swift
+  .skill-list__graph--design
+    height 12px
+
+    &::before
+      height 12px
+
+  .content-skill__text
+    margin-top 20px
+
+//=============================================
+// Tool
+//=============================================
+.tool-list
+  list-style none
+  margin-top 10px
+  font-size 0
+
+  > li
+    display inline-block
+    font-size fs-base
+    margin-top 10px
+    margin-right 10px
+    vertical-align middle
+
+    > img
+      width 100%
+  
+.tool-list__icon--photoshop
+  retinaSprite($icon_photoshop_group)
+  image-replacement()
+
+.tool-list__icon--illustrator
+  retinaSprite($icon_illustrator_group)
+  image-replacement()
+
+.tool-list__icon--web-storm
+  retinaSprite($icon_web_storm_group)
+  image-replacement()
+
+.tool-list__icon--sublime-text
+  retinaSprite($icon_sublime_text_group)
+  image-replacement()
+
+.tool-list__icon--git
+  retinaSprite($icon_git_group)
+  image-replacement()
+
+.tool-list__icon--github
+  retinaSprite($icon_github_group)
+  image-replacement()
+
+.tool-list__icon--sketch
+  retinaSprite($icon_sketch_group)
+  image-replacement()
+
+@media mq-sp
+  .tool-list
+    > li
+      margin-right 7px

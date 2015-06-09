@@ -1,0 +1,20 @@
+mixin border()
+  div.g-nav-icon__border--top
+  div.g-nav-icon__border--center-front
+  div.g-nav-icon__border--center-back
+  div.g-nav-icon__border--bottom
+
+if (about)
+  div.g-nav-icon--top.jsc-loading-icon#jsi-drawer-menu-trigger
+    +border()
+else
+  div.g-nav-icon#jsi-drawer-menu-trigger
+    +border()
+
+nav.g-nav#jsi-drawer-menu-nav-target
+  h2.g-nav__title Menu
+  ul.g-nav__list#jsi-lazy-link
+    li: a(href='/index.html') About
+    li: a(href='/works/index.html') Works
+    li: a(href='/skill/index.html') Skill
+div.g-nav-overlay#jsi-drawer-menu-overlay

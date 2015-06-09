@@ -1,0 +1,173 @@
+//*********************************************
+//
+// About
+//
+//*********************************************
+//=============================================
+// Main Visual
+//=============================================
+.main-visual
+  position absolute
+  top 0
+  left 0
+  background-image url(/images/img-main-visual.jpg)
+  background-position center
+  background-repeat no-repeat
+  background-size cover
+  display table
+
+// ----- Normal ------------------------------
+.main-visual-title
+  display table-cell
+  vertical-align middle
+  text-align center
+  font-family ff-yanone-kaffeesatz
+  color fc-logo
+  line-height 1
+  opacity 0
+  transition transform duration-normal, opacity duration-slow
+  transform translate3d(0, 80px, 0)
+
+// ----- Active -------------------------------
+.main-visual-title.is-active
+  opacity 1
+  transform translate3d(0, 0, 0)
+  transition-delay 500ms
+
+.g-header-title__secondary
+.g-header-title__primary
+  font-family inherit // for safari
+
+.g-header-title__secondary
+  font-size 55px
+
+.g-header-title__primary
+  font-size 95px
+
+@media mq-tb
+  .g-header-title__secondary
+    font-size 40px
+
+  .g-header-title__primary
+    font-size 70px
+
+@media mq-sp
+  .main-visual-title
+    transform translate3d(0, 60px, 0)
+
+  .g-header-title__secondary
+    font-size 25px
+
+  .g-header-title__primary
+    font-size 45px
+
+//=============================================
+// Point
+//=============================================
+.content-point
+  margin-top 60px
+
+.content-point__title
+  heading()
+
+.content-point__list
+  margin-top 20px
+  margin-left 15px
+
+  > li:not(:first-child)
+    margin-top 5px
+
+@media mq-sp
+  .content-point__title
+    heading(heading-small)
+
+//=============================================
+// Profile
+//=============================================
+.content-profile
+  border-top solid 1px bc-delimit
+  margin-top 90px
+  padding-top 90px
+
+.content-profile__title
+  heading()
+
+@media mq-sp
+  .content-profile__title
+    heading(heading-small)
+
+  .content-profile
+    margin-top 60px
+    padding-top 60px
+
+// ----- Detail -------------------------------
+.content-profile__detail
+  display flex
+  flex-direction row
+  margin-top 20px
+
+@media mq-sp
+  .content-profile__detail
+    flex-direction column
+    width 100%
+
+// ----- Photo --------------------------------
+.content-profile-photo
+  border-radius 50%
+  height 150px
+  width 150px
+  overflow hidden
+  margin-right 30px
+  flex none
+
+  > img
+    margin-left -50px
+    margin-top -30px
+    width 200px
+
+@media mq-sp
+  .content-profile-photo
+    margin auto
+
+// ----- Description --------------------------
+.content-profile-description__name
+  font-size fs-large
+
+.content-profile-description__job
+  margin-top 5px
+
+.content-profile-description__service
+  list-style none
+  margin-top 15px
+  font-size 0
+
+  > li
+    display inline-block
+    font-size fs-base
+    opacity 1
+    transition opacity duration-fast
+
+    &:not(:first-child)
+      margin-left 10px
+
+    &:hover
+      opacity 0.8
+
+.content-profile-description__text
+  margin-top 15px
+
+.content-profile-description__icon--github
+  retinaSprite($icon_github_group)
+  image-replacement()
+  display block
+
+.content-profile-description__icon--qiita
+  retinaSprite($icon_qiita_group)
+  image-replacement()
+  display block
+
+@media mq-sp
+  .content-profile-description
+    margin-top 30px
+
+

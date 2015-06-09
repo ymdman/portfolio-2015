@@ -1,0 +1,94 @@
+//*********************************************
+//
+// Header
+//
+//*********************************************
+.g-header
+  position relative
+  height 90px
+  background color-theme-dark
+
+.g-header--top
+  position relative
+
+@media mq-sp
+  .g-header
+    height 79px
+
+//=============================================
+// Logo
+//=============================================
+.g-header-logo
+  line-height 1
+  font-family ff-yanone-kaffeesatz
+  color fc-logo
+  position relative
+  top 11px
+  left 10%
+  z-index 100
+
+// ----- Logo Title ---------------------------
+.g-header-logo-title__primary
+  font-size 45px
+
+.g-header-logo-title__secondary
+  font-size 25px
+
+// ----- Logo Description----------------------
+.g-header-logo-description
+  font-weight normal
+
+.g-header-logo-description__secondary
+  font-size 13px
+
+.g-header-logo-description__primary
+  font-size 17px
+  margin-left 5px
+
+.g-header-logo-title
+.g-header-logo-description
+  font-family inherit // for safari
+
+  span
+    font-family @font-family  // for safari
+
+@media mq-tb
+  .g-header-logo
+    left 7%
+
+@media mq-sp
+  .g-header-logo
+    left 4%
+
+  .g-header-logo-title
+    line-height 0.9
+
+  .g-header-logo-title__primary
+    font-size 40px
+
+  .g-header-logo-title__secondary
+    font-size 20px
+
+  .g-header-logo-description
+    margin-top 3px
+
+  .g-header-logo-description__secondary
+    font-size 11px
+
+  .g-header-logo-description__primary
+    font-size 15px
+    margin-left 5px
+
+// ----- Normal -------------------------------
+.g-header--top
+  .g-header-logo
+    opacity 0
+    transition transform duration-normal, opacity duration-slow
+    transform translate3d(0, 60px, 0)
+
+// ----- Active -------------------------------
+.g-header--top
+  .g-header-logo.is-active
+    opacity 1
+    transform translate3d(0, 0, 0)
+    transition-delay 200ms

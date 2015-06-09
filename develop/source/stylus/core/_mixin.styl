@@ -1,0 +1,76 @@
+//*********************************************
+//
+// Mixin
+//
+//*********************************************
+//=============================================
+// Heading
+//=============================================
+heading(size = heading-medium)
+  +cache('fs' + size)
+    font-size size
+  +cache(argument)
+    font-family ff-yanone-kaffeesatz
+    line-height 1
+
+heading-ul(size = heading-medium)
+  +cache(argument)
+    heading(size)
+    border-bottom solid 2px #a2a2a2
+    padding-bottom 10px
+
+//=============================================
+// Content Width
+//=============================================
+content-width()
+  +cache(argument)
+    padding-right 10%
+    padding-left 10%
+
+content-width-tb()
+  +cache(argument)
+    padding-right 7%
+    padding-left 7%
+
+content-width-sp()
+  +cache(argument)
+    padding-right 4%
+    padding-left 4%
+
+//=============================================
+// Header Icon
+//=============================================
+g-nav-icon-border()
+  +cache(argument)
+    background-color fc-nav
+    height 3px
+    width 30px
+    position absolute
+    left 10px
+
+g-nav-icon-border-horizontal()
+  +cache(argument)
+    opacity 1
+    transition opacity duration-normal linear
+
+//=============================================
+// Retine Image
+//=============================================
+image-height-retina(file-name)
+  height (image-size(image-path + file-name)[0] / 2)
+
+image-width-retina(file-name)
+  width (image-size(image-path + file-name)[1] / 2)
+
+//=============================================
+// Image Replacement
+//=============================================
+image-replacement()
+  +cache(argument)
+    text-indent 100%
+    white-space nowrap
+    overflow hidden
+
+
+
+

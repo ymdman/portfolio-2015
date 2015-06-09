@@ -1,0 +1,134 @@
+//*********************************************
+//
+// Works
+//
+//*********************************************
+.content-works
+  margin-top 100px
+
+  & + .content-works
+    border-top solid 1px bc-delimit
+    margin-top 90px
+    padding-top 90px
+
+@media mq-sp
+  .content-works
+    margin-top 60px
+
+    & + .content-works
+      margin-top 50px
+      padding-top 50px
+
+//=============================================
+// Description
+//=============================================
+.content-works-description__title
+  heading()
+
+.content-works-description__list
+  margin-top 35px
+  display inline-block
+
+  > dt
+    font-weight bold
+
+    &:not(:first-child)
+      margin-top 20px
+
+.content-works-description__text
+  margin-top 35px
+
+@media mq-sp
+  .content-works-description__title
+    heading(heading-small)
+
+  .content-works-description__list
+    margin-top 20px
+
+    > dt:not(:first-child)
+      margin-top 15px
+
+  .content-works-description__text
+    margin-top 20px
+
+//=============================================
+// Img
+//=============================================
+.content-works-detail
+  margin-top 35px
+
+.content-works-detail__list
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  list-style none
+  margin-top -20px
+  margin-left -2%
+
+  > li
+    margin-top 20px
+    margin-left 2%
+    flex 0 0 23%
+
+    > a
+      text-decoration none
+      color fc-base
+
+    &:hover
+      .content-works-img__caption
+        color color-theme-light
+
+      .content-works-img__mask
+        border solid 1px color-theme-light
+
+.content-works-img
+  margin 0
+  position relative
+
+.content-works-img__mask
+  overflow hidden
+  border solid 1px bc-delimit
+  position relative
+
+  &::before
+    content ""
+    display block
+    padding-top 75%
+
+.content-works-img__mask-inner
+  position absolute
+  top 0
+  left 0
+
+  > img
+    width 100%
+    -webkit-tap-highlight-color rgba(0,0,0,0)
+
+.content-works-img__caption
+  font-family ff-yanone-kaffeesatz
+  font-size fs-large
+
+@media mq-tb
+  .content-works-detail__list
+
+    > li
+      flex 0 0 31.3%
+
+@media mq-sp
+  .content-works-detail
+    margin-top 20px
+
+  .content-works-detail__list
+
+    > li
+      margin-left 3%
+      flex 0 0 47%
+
+
+
+
+
+
+
+
+
