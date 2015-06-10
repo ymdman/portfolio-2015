@@ -4,7 +4,8 @@ Support = require './../utility/support'
 class DrawerMenu extends Inheritance
   OPEN_CLASS: 'is-open'
   FIXED_CLASS: 'jsc-pf-i'
-  OVERFLOW_CLASS: 'jsc-ofy-i'
+  HIDDEN_CLASS: 'jsc-ofh-i'
+  SCROLL_Y_CLASS: 'jsc-ofy-i'
   STYLE_ATTR_NAME: 'style'
 
   $window: $ window
@@ -78,15 +79,15 @@ class DrawerMenu extends Inheritance
 
       @$html
         .add @$body
-        .addClass @FIXED_CLASS
+        .addClass @HIDDEN_CLASS
 
     else if @isWindows
       if @isBrowser is 'firefox'
         @$body
-          .addClass @OVERFLOW_CLASS + ' ' + @FIXED_CLASS
+          .addClass @SCROLL_Y_CLASS + ' ' + @FIXED_CLASS
       else
         @$body
-          .addClass @OVERFLOW_CLASS
+          .addClass @SCROLL_Y_CLASS
 
       @$wrapper
         .css
@@ -95,7 +96,7 @@ class DrawerMenu extends Inheritance
 
     else
       @$body.width @$body.width()
-      @$body.addClass @FIXED_CLASS
+      @$body.addClass @HIDDEN_CLASS
 
   removeScrollPosition: ->
     if @isiOS
@@ -103,12 +104,12 @@ class DrawerMenu extends Inheritance
 
       @$html
         .add @$body
-        .removeClass @FIXED_CLASS
+        .removeClass @HIDDEN_CLASS
         .scrollTop @scrollPosition
 
     else if @isWindows
       @$body
-        .removeClass @OVERFLOW_CLASS + ' ' + @FIXED_CLASS
+        .removeClass @SCROLL_Y_CLASS + ' ' + @FIXED_CLASS
 
       @$wrapper.removeAttr @STYLE_ATTR_NAME
 
@@ -118,6 +119,6 @@ class DrawerMenu extends Inheritance
 
     else
       @$body.width ''
-      @$body.removeClass @FIXED_CLASS
+      @$body.removeClass @HIDDEN_CLASS
 
 module.exports = DrawerMenu
