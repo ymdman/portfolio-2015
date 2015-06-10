@@ -3,7 +3,8 @@ Support = require './../utility/support'
 
 class DrawerMenu extends Inheritance
   OPEN_CLASS: 'is-open'
-  FIXED_CLASS: 'jsc-ofh-i'
+  FIXED_CLASS: 'jsc-pf-i'
+  OVERFLOW_CLASS: 'jsc-ofy-i'
   STYLE_ATTR_NAME: 'style'
 
   $window: $ window
@@ -29,10 +30,11 @@ class DrawerMenu extends Inheritance
 
   attachEvent: ->
     @$trigger.on @event, =>
-      @toggleSlide()
-      @getWindowHeight()
-      @adjustScrollPosition()
-      @invertFlg()
+      unless @flg
+        @toggleSlide()
+        @getWindowHeight()
+        @adjustScrollPosition()
+        @invertFlg()
 
     @$ovarLay.on @event, =>
       unless @flg
@@ -81,10 +83,10 @@ class DrawerMenu extends Inheritance
     else if @isWindows
       if @isBrowser is 'firefox'
         @$body
-          .addClass 'jsc-ofy-i jsc-pf-i'
+          .addClass @OVERFLOW_CLASS + ' ' + @FIXED_CLASS
       else
         @$body
-          .addClass 'jsc-ofy-i'
+          .addClass @OVERFLOW_CLASS
 
       @$wrapper
         .css
@@ -106,7 +108,7 @@ class DrawerMenu extends Inheritance
 
     else if @isWindows
       @$body
-        .removeClass 'jsc-ofy-i jsc-pf-i'
+        .removeClass @OVERFLOW_CLASS + ' ' + @FIXED_CLASS
 
       @$wrapper.removeAttr @STYLE_ATTR_NAME
 
