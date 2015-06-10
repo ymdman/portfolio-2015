@@ -21,17 +21,18 @@ class DrawerMenu extends Inheritance
   constructor: ->
     @extend new Support()
     @isiOS = @isiOS()
+    @isWindows = @isWindows()
+    @isBrowser = @isBrowser()
     @event = @isEvent()
 
     @attachEvent()
 
   attachEvent: ->
     @$trigger.on @event, =>
-      unless @flg
-        @toggleSlide()
-        @getWindowHeight()
-        @adjustScrollPosition()
-        @invertFlg()
+      @toggleSlide()
+      @getWindowHeight()
+      @adjustScrollPosition()
+      @invertFlg()
 
     @$ovarLay.on @event, =>
       unless @flg
@@ -77,6 +78,19 @@ class DrawerMenu extends Inheritance
         .add @$body
         .addClass @FIXED_CLASS
 
+    else if @isWindows
+      if @isBrowser is 'firefox'
+        @$body
+          .addClass 'jsc-ofy-i jsc-pf-i'
+      else
+        @$body
+          .addClass 'jsc-ofy-i'
+
+      @$wrapper
+        .css
+          top: -@scrollPosition
+          height: @scrollPosition + @windowHeight
+
     else
       @$body.width @$body.width()
       @$body.addClass @FIXED_CLASS
@@ -88,6 +102,16 @@ class DrawerMenu extends Inheritance
       @$html
         .add @$body
         .removeClass @FIXED_CLASS
+        .scrollTop @scrollPosition
+
+    else if @isWindows
+      @$body
+        .removeClass 'jsc-ofy-i jsc-pf-i'
+
+      @$wrapper.removeAttr @STYLE_ATTR_NAME
+
+      @$html
+        .add @$body
         .scrollTop @scrollPosition
 
     else

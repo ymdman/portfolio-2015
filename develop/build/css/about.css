@@ -296,6 +296,10 @@ a:hover {
   overflow: hidden !important;
 }
 
+.jsc-ofy-i {
+  overflow-y: scroll !important;
+}
+
 .container {
   opacity: 0;
   overflow: hidden;
