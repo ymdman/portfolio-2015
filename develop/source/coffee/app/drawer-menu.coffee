@@ -85,6 +85,8 @@ class DrawerMenu extends Inheritance
       if @isBrowser is 'firefox'
         @$body
           .addClass @SCROLL_Y_CLASS + ' ' + @FIXED_CLASS
+          .width '100%'
+
       else
         @$body
           .addClass @SCROLL_Y_CLASS
@@ -108,8 +110,14 @@ class DrawerMenu extends Inheritance
         .scrollTop @scrollPosition
 
     else if @isWindows
-      @$body
+      if @isBrowser is 'firefox'
+        @$body
         .removeClass @SCROLL_Y_CLASS + ' ' + @FIXED_CLASS
+        .width ''
+
+      else
+        @$body
+          .removeClass @SCROLL_Y_CLASS
 
       @$wrapper.removeAttr @STYLE_ATTR_NAME
 
